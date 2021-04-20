@@ -3,6 +3,7 @@
 
 [![PyPI version](https://badge.fury.io/py/desuwa.svg)](https://badge.fury.io/py/desuwa)
 [![Python Versions](https://img.shields.io/pypi/pyversions/desuwa.svg)](https://pypi.org/project/desuwa/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 [![CircleCI](https://circleci.com/gh/megagonlabs/desuwa.svg?style=svg&circle-token=b10ac94d6822fadf276297d457cf219ba1bea7f6)](https://app.circleci.com/pipelines/github/megagonlabs/desuwa)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b8277e89862471dcf827/maintainability)](https://codeclimate.com/github/megagonlabs/desuwa/maintainability)
