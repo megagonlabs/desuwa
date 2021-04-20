@@ -12,7 +12,7 @@
 [![jsonlint](https://img.shields.io/badge/json-lint-lightgrey)](https://github.com/dmeranda/demjson)
 [![yamllint](https://img.shields.io/badge/yaml-lint-lightgrey)](https://github.com/adrienverge/yamllint)
 
-Feature annotator to morphemes and phrases based on KNP rule files
+Feature annotator to morphemes and phrases based on KNP rule files (pure-Python)
 
 ## Quick Start
 
