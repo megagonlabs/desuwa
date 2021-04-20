@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "desuwa"
+version = "1.0.0"
+description = "Feature annotator based on KNP rule files"
+authors = ["Yuta Hayashibe <hayashibe@megagon.ai>"]
+maintainers = ["Yuta Hayashibe <hayashibe@megagon.ai>"]
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://github.com/megagonlabs/desuwa"
+repository = "https://github.com/megagonlabs/desuwa"
+documentation = ""
+keywords = []
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pyknp = "^0.4.5"
+sexpdata = "^0.0.3"
+dataclasses-json = "^0.5.2"
+
+[tool.poetry.dev-dependencies]
+autopep8 = ">=1.5.4"
+coverage = ">=5.3"
+demjson = ">=2.2.4"
+flake8 = ">=3.8.4"
+isort = ">=5.6.4"
+mypy = ">=0.790"
+yamllint = ">=1.25.0"
+
+[build-system]
+requires = ["poetry"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+desuwa = "desuwa.cli:main"
