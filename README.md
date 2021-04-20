@@ -1,6 +1,9 @@
 
 # Desuwa
 
+[![PyPI version](https://badge.fury.io/py/desuwa.svg)](https://badge.fury.io/py/desuwa)
+[![Python Versions](https://img.shields.io/pypi/pyversions/desuwa.svg)](https://pypi.org/project/desuwa/)
+
 [![CircleCI](https://circleci.com/gh/megagonlabs/desuwa.svg?style=svg&circle-token=b10ac94d6822fadf276297d457cf219ba1bea7f6)](https://app.circleci.com/pipelines/github/megagonlabs/desuwa)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b8277e89862471dcf827/maintainability)](https://codeclimate.com/github/megagonlabs/desuwa/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b8277e89862471dcf827/test_coverage)](https://codeclimate.com/github/megagonlabs/desuwa/test_coverage)
