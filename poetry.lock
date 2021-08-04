@@ -62,7 +62,7 @@ pyflakes = ">=2.3.0,<2.4.0"
 
 [[package]]
 name = "importlib-metadata"
-version = "4.6.1"
+version = "4.6.3"
 description = "Read metadata from Python packages"
 category = "dev"
 optional = false
@@ -79,7 +79,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 
 [[package]]
 name = "isort"
-version = "5.9.2"
+version = "5.9.3"
 description = "A Python utility / library to sort Python imports."
 category = "dev"
 optional = false
@@ -255,11 +255,11 @@ typing-extensions = ">=3.7.4"
 
 [[package]]
 name = "yamllint"
-version = "1.26.1"
+version = "1.26.2"
 description = "A linter for YAML files."
 category = "dev"
 optional = false
-python-versions = ">=3.5.*"
+python-versions = ">=3.5"
 
 [package.dependencies]
 pathspec = ">=0.5.3"
@@ -353,12 +353,12 @@ flake8 = [
     {file = "flake8-3.9.2.tar.gz", hash = "sha256:07528381786f2a6237b061f6e96610a4167b226cb926e2aa2b6b1d78057c576b"},
 ]
 importlib-metadata = [
-    {file = "importlib_metadata-4.6.1-py3-none-any.whl", hash = "sha256:9f55f560e116f8643ecf2922d9cd3e1c7e8d52e683178fecd9d08f6aa357e11e"},
-    {file = "importlib_metadata-4.6.1.tar.gz", hash = "sha256:079ada16b7fc30dfbb5d13399a5113110dab1aa7c2bc62f66af75f0b717c8cac"},
+    {file = "importlib_metadata-4.6.3-py3-none-any.whl", hash = "sha256:51c6635429c77cf1ae634c997ff9e53ca3438b495f10a55ba28594dd69764a8b"},
+    {file = "importlib_metadata-4.6.3.tar.gz", hash = "sha256:0645585859e9a6689c523927a5032f2ba5919f1f7d0e84bd4533312320de1ff9"},
 ]
 isort = [
-    {file = "isort-5.9.2-py3-none-any.whl", hash = "sha256:eed17b53c3e7912425579853d078a0832820f023191561fcee9d7cae424e0813"},
-    {file = "isort-5.9.2.tar.gz", hash = "sha256:f65ce5bd4cbc6abdfbe29afc2f0245538ab358c14590912df638033f157d555e"},
+    {file = "isort-5.9.3-py3-none-any.whl", hash = "sha256:e17d6e2b81095c9db0a03a8025a957f334d6ea30b26f9ec70805411e5c7c81f2"},
+    {file = "isort-5.9.3.tar.gz", hash = "sha256:9c2ea1e62d871267b78307fe511c0838ba0da28698c5732d54e2790bf3ba9899"},
 ]
 marshmallow = [
     {file = "marshmallow-3.13.0-py2.py3-none-any.whl", hash = "sha256:dd4724335d3c2b870b641ffe4a2f8728a1380cd2e7e2312756715ffeaa82b842"},
@@ -504,7 +504,7 @@ typing-inspect = [
     {file = "typing_inspect-0.7.1.tar.gz", hash = "sha256:047d4097d9b17f46531bf6f014356111a1b6fb821a24fe7ac909853ca2a782aa"},
 ]
 yamllint = [
-    {file = "yamllint-1.26.1.tar.gz", hash = "sha256:87d9462b3ed7e9dfa19caa177f7a77cd9888b3dc4044447d6ae0ab233bcd1324"},
+    {file = "yamllint-1.26.2.tar.gz", hash = "sha256:0b08a96750248fdf21f1e8193cb7787554ef75ed57b27f621cd6b3bf09af11a1"},
 ]
 zipp = [
     {file = "zipp-3.5.0-py3-none-any.whl", hash = "sha256:957cfda87797e389580cb8b9e3870841ca991e2125350677b2ca83a0e99390a3"},
