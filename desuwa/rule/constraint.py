@@ -9,25 +9,25 @@ from sexpdata import Symbol
 
 class FeatureConstraint(object):
     def __init__(self, fs: Set[str]):
-        self.shoud_include: List[str] = []
-        self.shoud_not_include: List[str] = []
+        self.should_include: List[str] = []
+        self.should_not_include: List[str] = []
         for t in fs:
             if t.startswith('^'):
-                self.shoud_not_include.append(t[1:])
+                self.should_not_include.append(t[1:])
             else:
-                self.shoud_include.append(t)
+                self.should_include.append(t)
 
     def match(self, fs: Set[str]) -> bool:
-        for t in self.shoud_include:
+        for t in self.should_include:
             if t not in fs:
                 return False
-        for t in self.shoud_not_include:
+        for t in self.should_not_include:
             if t in fs:
                 return False
         return True
 
     def __str__(self) -> str:
-        return f'FC<SI={self.shoud_include}, SNI={self.shoud_not_include}>'
+        return f'FC<SI={self.should_include}, SNI={self.should_not_include}>'
 
 
 class FeatureConstraints(list):
