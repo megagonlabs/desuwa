@@ -9,8 +9,13 @@ TARGET_DIR:=desuwa
 dev_setup:
 	poetry install $(POETRY_NO_ROOT) $(POETRY_OPTION)
 
-setup:
+setup: setup_python setup_npm
+
+setup_python:
 	poetry install $(POETRY_OPTION)
+
+setup_npm:
+	npm install
 
 flake8:
 	find $(TARGET_DIR) ./tests *.py | grep -v '\.venv' | grep '\.py$$' | xargs flake8
@@ -26,7 +31,7 @@ jsonlint:
 	python3 -c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=4,ensure_ascii=False,sort_keys=True))" < .markdownlint.json  | diff -q - .markdownlint.json
 
 pyright:
-	pyright
+	npx pyright
 
 yamllint:
 	yamllint --no-warnings ./.circleci/config.yml
@@ -60,9 +65,6 @@ test-cc: test
 	    --coverage-input-type coverage.py\
 	    --exit-code $$?
 
-setup_node_module:
-	npm install markdownlint-cli
-
 lint_markdown:
 	find . -type d -o -type f -name '*.md' -print \
                 | grep -v node_modules \
@@ -75,7 +77,7 @@ lint_markdown:
 	lint \
 	_run_isort _test _coverage\
 	test test-coverage setup-cc test-cc\
-	setup_node_module lint_markdown circleci_local
+	setup_npm lint_markdown circleci_local
 
 .DELETE_ON_ERROR:
 
