@@ -31,25 +31,26 @@ class RulesLevelMrph(list):
         with path_in.open() as inf:
             for i, r in enumerate(parse_rule_text(inf)):
                 self.append(RuleLevelMrph(r))
-#         self[-1].operations.append((False, f'SRC={path_in.name}/{i}'))
-#         print(self[-1])
 
-    @ staticmethod
+    #         self[-1].operations.append((False, f'SRC={path_in.name}/{i}'))
+    #         print(self[-1])
+
+    @staticmethod
     def initialize(mlist: MList):
-        if hasattr(mlist, 'fs_inited'):
+        if hasattr(mlist, "fs_inited"):
             return
         mlist.fs_inited = True
 
         for m in mlist:
             m.fs = Features()
-            if m.imis == 'NIL' or len(m.imis) == 0:
+            if m.imis == "NIL" or len(m.imis) == 0:
                 continue
-            for f in m.imis.split(' '):
-                if f.startswith('代表表記'):
+            for f in m.imis.split(" "):
+                if f.startswith("代表表記"):
                     continue
                 m.fs.add(f)
-        mlist[0].fs.add('文頭')
-        mlist[-1].fs.add('文末')
+        mlist[0].fs.add("文頭")
+        mlist[-1].fs.add("文末")
 
 
 class RulerMrph(object):

@@ -10,23 +10,21 @@ def get_mlist(inf) -> Iterator[MList]:
     buf: List[str] = []
     surfs: List[str] = []
     for line in inf:
-        if line == 'EOS\n':
-            yield MList(''.join(buf))
+        if line == "EOS\n":
+            yield MList("".join(buf))
             buf = []
             surfs = []
             continue
         buf.append(line)
-        if line.startswith('@'):
+        if line.startswith("@"):
             continue
-        surf = line[:line.index(' ')]
+        surf = line[: line.index(" ")]
         surfs.append(surf)
 
 
 def tab_indent(text: str, num: int) -> str:
-    return '\t' * num + text.replace('\n', '\n' + '\t' * num)
+    return "\t" * num + text.replace("\n", "\n" + "\t" * num)
 
 
 def clean_sexp(text: str) -> str:
-    return text\
-        .replace('[', '(').replace(']', ')') \
-        .replace('<', '(').replace('>', ')')
+    return text.replace("[", "(").replace("]", ")").replace("<", "(").replace(">", ")")

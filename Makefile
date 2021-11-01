@@ -14,23 +14,24 @@ setup:
 
 flake8:
 	find $(TARGET_DIR) ./tests *.py | grep -v '\.venv' | grep '\.py$$' | xargs flake8
-autopep8:
-	find $(TARGET_DIR) ./tests *.py | grep -v '\.venv' | grep '\.py$$' | xargs autopep8 -d | diff /dev/null -
-mypy:
-	find $(TARGET_DIR) ./tests *.py | grep -v '\.venv' | grep '\.py$$' | xargs mypy --python-version 3.7 --check-untyped-defs --strict-equality --no-implicit-optional
+black:
+	find $(TARGET_DIR) ./tests *.py | grep -v '\.venv' | grep '\.py$$' | xargs black --diff | diff /dev/null -
 isort:
 	find $(TARGET_DIR) ./tests *.py | grep -v '\.venv' | grep '\.py$$' | xargs isort --diff | diff /dev/null -
 
 jsonlint:
-	find .*json $(TARGET_DIR) ./tests -type f | grep -v 'mypy_cache' |  grep '\.jsonl$$' | sort |xargs cat | python3 -c 'import sys,json; [json.loads(line) for line in sys.stdin]'
-	find .*json $(TARGET_DIR) ./tests -type f | grep -v 'mypy_cache' |  grep '\.json$$' | sort |xargs -n 1 -t python3 -m json.tool > /dev/null
-	find .*json $(TARGET_DIR) ./tests -type f | grep -v 'mypy_cache' |  grep '\.json$$' | sort |xargs -n 1 -t jsonlint
+	find .*json $(TARGET_DIR) ./tests -type f |  grep '\.jsonl$$' | sort |xargs cat | python3 -c 'import sys,json; [json.loads(line) for line in sys.stdin]'
+	find .*json $(TARGET_DIR) ./tests -type f |  grep '\.json$$' | sort |xargs -n 1 -t python3 -m json.tool > /dev/null
+	find .*json $(TARGET_DIR) ./tests -type f |  grep '\.json$$' | sort |xargs -n 1 -t jsonlint
 	python3 -c "import sys,json;print(json.dumps(json.loads(sys.stdin.read()),indent=4,ensure_ascii=False,sort_keys=True))" < .markdownlint.json  | diff -q - .markdownlint.json
+
+pyright:
+	pyright
 
 yamllint:
 	yamllint --no-warnings ./.circleci/config.yml
 
-lint: flake8 autopep8 mypy isort yamllint
+lint: flake8 black pyright isort yamllint
 
 _run_isort:
 	isort -rc .
@@ -69,7 +70,7 @@ lint_markdown:
                 | xargs npx markdownlint --config ./.markdownlint.json
 
 .PHONY: all setup \
-	flake8 autopep8 mypy isort jsonlint yamllint\
+	flake8 black pyright isort jsonlint yamllint\
 	terms_check_path term_check_method term_check_file_content\
 	lint \
 	_run_isort _test _coverage\

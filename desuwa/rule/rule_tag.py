@@ -43,9 +43,9 @@ class RulerTag(object):
 
 def get_opts() -> argparse.Namespace:
     oparser = argparse.ArgumentParser()
-    oparser.add_argument("--rule", "-r", type=Path, action='append', required=True)
-    oparser.add_argument("--input", "-i", type=argparse.FileType('r'), default='-')
-    oparser.add_argument("--output", "-o", type=argparse.FileType('w'), default='-')
+    oparser.add_argument("--rule", "-r", type=Path, action="append", required=True)
+    oparser.add_argument("--input", "-i", type=argparse.FileType("r"), default="-")
+    oparser.add_argument("--output", "-o", type=argparse.FileType("w"), default="-")
     return oparser.parse_args()
 
 
@@ -59,5 +59,5 @@ def main() -> None:
             print()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

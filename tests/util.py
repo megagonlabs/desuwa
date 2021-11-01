@@ -14,15 +14,15 @@ class DummyJumanpp(object):
             buf: List[str] = []
             surfs: List[str] = []
             for line in inf:
-                if line == 'EOS\n':
-                    self.surf2parsed[''.join(surfs)] = ''.join(buf)
+                if line == "EOS\n":
+                    self.surf2parsed["".join(surfs)] = "".join(buf)
                     buf = []
                     surfs = []
                     continue
                 buf.append(line)
-                if line.startswith('@'):
+                if line.startswith("@"):
                     continue
-                surf = line[:line.index(' ')]
+                surf = line[: line.index(" ")]
                 surfs.append(surf)
 
     def get(self, sentence: str) -> Optional[MList]:

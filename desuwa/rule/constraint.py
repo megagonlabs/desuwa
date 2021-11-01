@@ -12,7 +12,7 @@ class FeatureConstraint(object):
         self.should_include: List[str] = []
         self.should_not_include: List[str] = []
         for t in fs:
-            if t.startswith('^'):
+            if t.startswith("^"):
                 self.should_not_include.append(t[1:])
             else:
                 self.should_include.append(t)
@@ -27,7 +27,7 @@ class FeatureConstraint(object):
         return True
 
     def __str__(self) -> str:
-        return f'FC<SI={self.should_include}, SNI={self.should_not_include}>'
+        return f"FC<SI={self.should_include}, SNI={self.should_not_include}>"
 
 
 class FeatureConstraints(list):

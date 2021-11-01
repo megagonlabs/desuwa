@@ -15,8 +15,7 @@ TYPE_TAG_CONSTRAINT = List[List[Union[Symbol, List[Symbol]]]]
 class TagRule(object):
     @staticmethod
     def is_any(constraint: List[Any]) -> bool:
-        return len(constraint) == 1 and isinstance(constraint[0], Symbol) \
-            and dumps(constraint[0]) == r'\?*'
+        return len(constraint) == 1 and isinstance(constraint[0], Symbol) and dumps(constraint[0]) == r"\?*"
 
     def __init__(self, tag_constraint: TYPE_TAG_CONSTRAINT):
         direction_forward = True
@@ -27,8 +26,8 @@ class TagRule(object):
             self.feature_constraints = FeatureConstraints(tag_constraint[1], False)
 
     def __str__(self) -> str:
-        return f'''TagRule: {self.rules}
-FC: {self.feature_constraints}'''
+        return f"""TagRule: {self.rules}
+FC: {self.feature_constraints}"""
 
     def match(self, tags: Tags, tag_index: int) -> bool:
         _start = tags.get_first_m_index(tag_index)
