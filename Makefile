@@ -1,7 +1,7 @@
 
 all: lint lint_markdown test
 
-GREP_EXCLUDE_DIR:=grep -v -e '\.eggs' -e '\.git' -e 'pyc$$' -e '\.mypy' -e '\.idea' -e '\./venv' -e 'python_env'  -e 'egg-info' -e htmlcov
+GREP_EXCLUDE_DIR:=grep -v -e '\.eggs' -e '\.git' -e 'pyc$$' -e '\.idea' -e '\./venv' -e 'python_env'  -e 'egg-info' -e htmlcov
 
 POETRY_NO_ROOT:= --no-root
 TARGET_DIR:=desuwa
