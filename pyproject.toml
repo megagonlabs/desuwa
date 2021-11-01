@@ -13,7 +13,7 @@ keywords = []
 
 [tool.poetry.dependencies]
 python = "^3.7"
-pyknp = "^0.4.5"
+pyknp = ">=0.4.5,<0.7.0"
 sexpdata = "^0.0.3"
 dataclasses-json = "^0.5.2"
 

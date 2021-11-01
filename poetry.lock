@@ -204,11 +204,11 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "pyknp"
-version = "0.4.6"
-description = "Python module for JUMAN/KNP."
+version = "0.6.1"
+description = "Python module for JUMAN/KNP"
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.7,<4.0"
 
 [package.dependencies]
 six = "*"
@@ -316,7 +316,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "fef0a6535c3336173b3e8fc779b0cc81b59d010bef984c67eec73f21cdbebc72"
+content-hash = "ecab3292ad7b626896df793af0dc6c8cc59e752d50c2d5ac6b6295c083bcbc99"
 
 [metadata.files]
 black = [
@@ -434,7 +434,8 @@ pyflakes = [
     {file = "pyflakes-2.4.0.tar.gz", hash = "sha256:05a85c2872edf37a4ed30b0cce2f6093e1d0581f8c19d7393122da7e25b2b24c"},
 ]
 pyknp = [
-    {file = "pyknp-0.4.6.zip", hash = "sha256:3406300592ae45814fc2e013f6a1eded9469cb774eed7f3d23dc198cb1267825"},
+    {file = "pyknp-0.6.1-py3-none-any.whl", hash = "sha256:c988cbd92d645e43d51a406835147a7c24aa849894802e22fcf5c4e1475da805"},
+    {file = "pyknp-0.6.1.tar.gz", hash = "sha256:5fca288a70304c745d20da5657c6175b5eadf7a7a571ed4f57bb157eb6e7df4d"},
 ]
 pyyaml = [
     {file = "PyYAML-6.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:d4db7c7aef085872ef65a8fd7d6d09a14ae91f691dec3e87ee5ee0539d516f53"},
